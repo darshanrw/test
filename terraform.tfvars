@@ -1,2 +1,2 @@
-rgname = "test-rg"
-location = "central india"
+#rgname = "test-rg"
+#location = "central india"

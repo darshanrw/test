@@ -12,7 +12,11 @@ provider "azurerm" {
   features {}
 }
 
-resource "azurerm_resource_group" "test" {
-  name     = var.rgname
-  location = var.location
-}
+#resource "azurerm_resource_group" "test" {
+ # name     = var.rgname
+ # location = var.location
+#}
+
+resource "azuread_user" "testusers" {
+  user_principal_name = "akmrx@gmail.com"
+  display_name        = "akmrx"
