@@ -13,3 +13,7 @@ variable "vnetname"{
 variable "subnetname"{
     type = string
 }
+
+variable "testnic"{
+    type = string
+}
