@@ -25,3 +25,7 @@ variable "vmname"{
 variable "admin_password"{
     type = string
 }
+
+variable "nsgname"{
+    type = string
+}

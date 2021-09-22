@@ -10,3 +10,8 @@ resource "azurerm_network_interface" "testnic" {
     public_ip_address_id          = azurerm_public_ip.test_ip.id
   }
 }
+
+resource "azurerm_network_interface_security_group_association" "nsgassociate" {
+  network_interface_id      = azurerm_network_interface.testnic.id
+  network_security_group_id = azurerm_network_security_group.testnsg.id
+}
