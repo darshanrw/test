@@ -2,23 +2,23 @@ resource "azurerm_virtual_machine" "testvm" {
   name                = var.vmname
   resource_group_name = azurerm_resource_group.testrg.name
   location            = var.location
-  size                = "Standard_B1"
-  admin_username      = "azureuser"
+  vm_size             = "Standard_B1"
   network_interface_ids = [
     azurerm_network_interface.testnic.id,
   ]
-  
 
-  os_disk {
-    caching              = "ReadWrite"
-    storage_account_type = "Standard_LRS"
-  }
-
-  source_image_reference {
+  storage_image_reference {
     publisher = "Canonical"
     offer     = "UbuntuServer"
     sku       = "18.04-LTS"
     version   = "latest"
+  }
+
+  storage_os_disk {
+    name              = "myosdisk1"
+    caching           = "ReadWrite"
+    create_option     = "FromImage"
+    managed_disk_type = "Standard_LRS"
   }
 
   os_profile{
