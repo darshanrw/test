@@ -20,15 +20,14 @@ resource "azurerm_linux_virtual_machine" "testvm" {
     sku       = "18.04-LTS"
     version   = "latest"
   }
-
-
-   os_profile{
+  
+  os_profile{
      computer_name = var.vmname
      admin_username = "azureuser"
      admin_password = var.admin_password
    }
 
-   os_profile_linux_config{
+  os_profile_linux_config{
      disable_password_authentication = false
    }
 }
