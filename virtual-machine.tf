@@ -1,4 +1,4 @@
-resource "azurerm_linux_virtual_machine" "testvm" {
+resource "azurerm_virtual_machine" "testvm" {
   name                = var.vmname
   resource_group_name = azurerm_resource_group.testrg.name
   location            = var.location
@@ -20,7 +20,7 @@ resource "azurerm_linux_virtual_machine" "testvm" {
     sku       = "18.04-LTS"
     version   = "latest"
   }
-  
+
   os_profile{
      computer_name = var.vmname
      admin_username = "azureuser"
