@@ -7,10 +7,6 @@ resource "azurerm_linux_virtual_machine" "testvm" {
   network_interface_ids = [
     azurerm_network_interface.testnic.id,
   ]
-
-  admin_ssh_key {
-    username   = "azureuser"
-    public_key = file("~/.ssh/id_rsa.pub")
   }
 
   os_disk {
@@ -25,3 +21,13 @@ resource "azurerm_linux_virtual_machine" "testvm" {
     version   = "latest"
   }
 }
+
+   os_profile{
+     computer_name = var.vmname
+     admin_username = "azureuser"
+     admin_password = var.admin_password
+   }
+
+   os_profile_linux_config{
+     disable_password_authentication = false
+   }

@@ -21,3 +21,7 @@ variable "nicname"{
 variable "vmname"{
     type = string
 }
+
+variable "admin_password"{
+    type = string
+}
