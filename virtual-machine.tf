@@ -2,7 +2,7 @@ resource "azurerm_virtual_machine" "testvm" {
   name                = var.vmname
   resource_group_name = azurerm_resource_group.testrg.name
   location            = var.location
-  vm_size             = "Standard_B1"
+  vm_size             = "Standard_B1s"
   network_interface_ids = [
     azurerm_network_interface.testnic.id,
   ]
