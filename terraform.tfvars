@@ -1,5 +1,5 @@
 resourcegroupname = "rg1"
-location          = "cantral india"
+location          = "central india"
 vnetname          = "vnet1"
 subnetname        = "subnet1"
 nicname           = "nic1"
