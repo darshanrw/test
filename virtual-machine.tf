@@ -7,7 +7,7 @@ resource "azurerm_linux_virtual_machine" "testvm" {
   network_interface_ids = [
     azurerm_network_interface.testnic.id,
   ]
-  }
+  
 
   os_disk {
     caching              = "ReadWrite"
@@ -31,3 +31,4 @@ resource "azurerm_linux_virtual_machine" "testvm" {
    os_profile_linux_config{
      disable_password_authentication = false
    }
+}
