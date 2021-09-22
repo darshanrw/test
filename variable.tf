@@ -14,6 +14,6 @@ variable "subnetname"{
     type = string
 }
 
-variable "testnic"{
+variable "nicname"{
     type = string
 }
